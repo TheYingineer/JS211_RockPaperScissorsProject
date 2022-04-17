@@ -1,3 +1,4 @@
+// **********set up**************
 // uses strict mode so strings are not coerced, variables are not hoisted, etc... 
 'use strict';
 
@@ -11,17 +12,41 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+//************end of set up **********
+
+
 // the function that will be called by the unit test below
 const rockPaperScissors = (hand1, hand2) => {
+  
+    if (hand1 === hand2){
+      return "It's a tie!"
+    }
 
-  // Write code here
-  // Use the unit test to see what is expected
+    else if ((hand1=== "rock" && hand2 ==='paper') || 
+             (hand1=== "paper" && hand2 ==='scissors') || 
+             (hand1=== "scissors" && hand2 ==='rock'))
+             {    
+                return "Hand two wins!"
+             }
 
+    else if(
+      (hand1.trim().toLowerCase() === "rock" & hand2.trim().toLowerCase() === "paper") ||
+      (hand1.trim().toLowerCase() === "paper" & hand2.trim().toLowerCase() === "scissors") ||
+      (hand1.trim().toLowerCase() === "scissors" & hand2.trim().toLowerCase() === "rock")
+      ) {
+          return "Hand two wins!"
+      }
+
+    else "start over"  
 }
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
 // to close it ctrl + C
+
+
+
+
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
     rl.question('hand2: ', (answer2) => {
