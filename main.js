@@ -26,17 +26,30 @@ const rockPaperScissors = (hand1, hand2) => {
              (hand1=== "paper" && hand2 ==='scissors') || 
              (hand1=== "scissors" && hand2 ==='rock'))
              {    
-                return "Hand two wins!"
+                return "Hand two wins!"// ASK TUTOR: it's display correctly for the node npm.js, but is' not passing npm test main.js
              }
+
+    else if ((hand2=== "rock" && hand1 ==='paper') || 
+              (hand2=== "paper" && hand1 ==='scissors') || 
+              (hand2=== "scissors" && hand1 ==='rock'))
+              {    
+                return "Hand one wins!"// ASK TUTOR: it's display correctly for the node npm.js, but is' not passing npm test main.js
+              }         
 
     else if(
       (hand1.trim().toLowerCase() === "rock" & hand2.trim().toLowerCase() === "paper") ||
       (hand1.trim().toLowerCase() === "paper" & hand2.trim().toLowerCase() === "scissors") ||
       (hand1.trim().toLowerCase() === "scissors" & hand2.trim().toLowerCase() === "rock")
       ) {
-          return "Hand two wins!"
+          return "Hand two wins!" // ASK TUTOR: it's display correctly for the node npm.js, but is' not passing npm test main.js
       }
-
+      else if(
+        (hand2.trim().toLowerCase() === "rock" & hand1.trim().toLowerCase() === "paper") ||
+        (hand2.trim().toLowerCase() === "paper" & hand1.trim().toLowerCase() === "scissors") ||
+        (hand2.trim().toLowerCase() === "scissors" & hand1.trim().toLowerCase() === "rock")
+        ) {
+            return "Hand one wins!" // ASK TUTOR: it's display correctly for the node npm.js, but is' not passing npm test main.js
+        }
     else "start over"  
 }
 
